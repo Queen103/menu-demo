@@ -1,15 +1,16 @@
+/* ./globals.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #1E40AF;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #1E40AF;
     --foreground: #ededed;
   }
 }
@@ -18,6 +19,7 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Arial', sans-serif;
 }
 
 @layer utilities {
