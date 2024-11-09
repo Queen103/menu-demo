@@ -2,7 +2,7 @@
 
 const SettingsPage = () => {
     return (
-        <div>
+        <div className="text-black text-[50px] text-center">
             <h1>Cài đặt chung</h1>
             <p>Đây là trang cài đặt.</p>
         </div>

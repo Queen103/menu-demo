@@ -2,9 +2,9 @@
 
 const DetailPage = () => {
     return (
-        <div>
-            <h1>Giao diện chi tiết</h1>
-            <p>Đây là trang chi tiết.</p>
+        <div className="text-black text-[50px] text-center">
+            <h1>Giao diện liên hệ</h1>
+            <p>Đây là trang liên hệ.</p>
         </div>
     );
 };

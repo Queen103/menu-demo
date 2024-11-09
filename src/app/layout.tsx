@@ -5,6 +5,7 @@ import Sidebar from './components/Sidebar';
 import Header from './components/Header'; // Import Header component
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';  // Import các icon mũi tên
 import './globals.css';  // Nhập vào file CSS
+import Footer from './components/Footer'; // Import Footer component
 
 export default function RootLayout({
   children,
@@ -20,8 +21,8 @@ export default function RootLayout({
 
   return (
     <html lang="vi">
-      <body className="min-h-screen overflow-hidden">
-        <div className="flex flex-col min-h-screen">
+      <body className="min-h-screen flex flex-col">
+        <div className="flex flex-col flex-1 pb-16">
           {/* Gọi Header component */}
           <Header />
 
@@ -49,6 +50,9 @@ export default function RootLayout({
             </main>
           </div>
         </div>
+
+        {/* Footer bám dính dưới cùng */}
+        <Footer />
       </body>
     </html>
   );
