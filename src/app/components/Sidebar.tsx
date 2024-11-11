@@ -39,8 +39,8 @@ const Sidebar = ({ isOpen }: SidebarProps) => {
                 </li>
                 <li className="flex items-center w-full">
                     <Link
-                        href="/settingMove"
-                        className={`flex items-center space-x-3 text-white text-[13px] px-3 py-4 w-full ${pathname === '/detail' ? 'bg-[#0000aa]' : 'hover:bg-[#0000aa]'}`}
+                        href="/setttingMove"
+                        className={`flex items-center space-x-3 text-white text-[13px] px-3 py-4 w-full ${pathname === '/setttingMove' ? 'bg-[#0000aa]' : 'hover:bg-[#0000aa]'}`}
                     >
                         <FiSettings className="text-[26px]" />
                         <span>CÀI ĐẶT CHUYỀN</span>
@@ -49,7 +49,7 @@ const Sidebar = ({ isOpen }: SidebarProps) => {
                 <li className="flex items-center w-full">
                     <Link
                         href="/report"
-                        className={`flex items-center space-x-3 text-white text-[13px] px-3 py-4 w-full ${pathname === '/detail' ? 'bg-[#0000aa]' : 'hover:bg-[#0000aa]'}`}
+                        className={`flex items-center space-x-3 text-white text-[13px] px-3 py-4 w-full ${pathname === '/report' ? 'bg-[#0000aa]' : 'hover:bg-[#0000aa]'}`}
                     >
                         <MdOutlineEmail className="text-[26px]" />
                         <span>CÀI ĐẶT BÁO CÁO</span>
