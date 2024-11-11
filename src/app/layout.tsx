@@ -3,9 +3,9 @@
 import { useState } from 'react';
 import Sidebar from './components/Sidebar';
 import Header from './components/Header'; // Import Header component
-import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';  // Import các icon mũi tên
 import './globals.css';  // Nhập vào file CSS
 import Footer from './components/Footer'; // Import Footer component
+import { IoMenuOutline } from "react-icons/io5";
 
 export default function RootLayout({
   children,
@@ -22,25 +22,25 @@ export default function RootLayout({
   return (
     <html lang="vi">
       <body className="min-h-screen flex flex-col">
-        <div className="flex flex-col flex-1 pb-16">
+        <div className="flex flex-col flex-1 pb-[25px]">
           {/* Gọi Header component */}
           <Header />
 
           {/* Nút để điều khiển Sidebar */}
           <button
             onClick={toggleSidebar}
-            className="fixed top-5 left-5 bg-blue-500 text-white p-2 rounded-md z-10 flex items-center"
+            className="fixed top-0.75 left-5 text-white rounded-md z-10 flex items-center bg-transparent"
           >
             {/* Hiển thị mũi tên tùy vào trạng thái sidebar */}
             {sidebarOpen ? (
-              <FaArrowLeft />
+              <IoMenuOutline className='text-[60px] ml-[50px]' />
             ) : (
-              <FaArrowRight />
+              <IoMenuOutline className='text-[60px] ' />
             )}
           </button>
 
           {/* Main content area */}
-          <div className={`flex flex-1 overflow-hidden transition-all ${sidebarOpen ? 'ml-64' : 'ml-0'}`}>
+          <div className={`flex flex-1 overflow-hidden transition-all ${sidebarOpen ? 'ml-[190px]' : 'ml-0'}`}>
             {/* Sidebar */}
             <Sidebar isOpen={sidebarOpen} />
 

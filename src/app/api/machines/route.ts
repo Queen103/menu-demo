@@ -24,15 +24,15 @@ const getRandomInt = (min: number, max: number) => Math.floor(Math.random() * (m
 
 // Danh sách máy cố định với `id` và `name` (tăng lên 15 máy)
 const machineTemplates: Pick<Machine, 'id' | 'name'>[] = [
-    { id: 1, name: "LINE 1" },
-    { id: 2, name: "LINE 2" },
-    { id: 3, name: "LINE 3" },
-    { id: 4, name: "LINE 4" },
-    { id: 5, name: "LINE 5" },
-    { id: 6, name: "LINE 6" },
-    { id: 7, name: "LINE 7" },
-    { id: 8, name: "LINE 8" },
-    { id: 9, name: "LINE 9" },
+    { id: 1, name: "LINE 01" },
+    { id: 2, name: "LINE 02" },
+    { id: 3, name: "LINE 03" },
+    { id: 4, name: "LINE 04" },
+    { id: 5, name: "LINE 05" },
+    { id: 6, name: "LINE 06" },
+    { id: 7, name: "LINE 07" },
+    { id: 8, name: "LINE 08" },
+    { id: 9, name: "LINE 09" },
     { id: 10, name: "LINE 10" },
     { id: 11, name: "LINE 11" },
     { id: 12, name: "LINE 12" },
@@ -61,8 +61,8 @@ const generateMachineData = (): Machine[] => {
 // Hàm cập nhật ngẫu nhiên các giá trị của `dailyTarget`, `hourTarget`, và `actual` mỗi giây
 const updateTargetValues = () => {
     machineData.forEach((machine) => {
-        machine.dailyTarget = getRandomInt(80, 150);
-        machine.hourTarget = getRandomInt(8, 15);
+        machine.dailyTarget = getRandomInt(1000, 3000);
+        machine.hourTarget = getRandomInt(-200, 500);
         machine.actual = getRandomInt(0, 150);
     });
 };

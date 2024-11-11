@@ -108,55 +108,55 @@ const HomePage = () => {
   }, [isSpeaking, previousMachinesState]); // Theo dõi thay đổi của isSpeaking và previousMachinesState
 
   return (
-    <div className="p-2" style={{ transform: 'scale(1, 0.93)', transformOrigin: 'top' }}>
+    <div className="p-2" >
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2">
         {machines.map((machine) => (
           <div
             key={machine.id}
-            className={`rounded-lg shadow-lg p-0 flex flex-col items-start justify-between transition-all transform hover:scale-[102%] hover:shadow-2xl duration-200 ${machine.isConnect ? 'bg-[#0101dd] border-blue-900 text-white' : 'bg-gray-400 border-gray-600 text-gray-200'}`}
+            className={`rounded-2xl shadow-lg p-0 flex flex-col items-start justify-between transition-all transform hover:scale-[102%] hover:shadow-2xl duration-200 ${machine.isConnect ? 'bg-[#0101dd] border-blue-900 text-white' : 'bg-gray-400 border-gray-600 text-gray-200'}`}
           >
 
             {/* Header */}
-            <div className="w-full p-0 mb-2 bg-[#003263] text-white rounded-t-lg flex items-center">
+            <div className="w-full bg-[#003263] text-white rounded-t-2xl flex items-center">
               {/* ID with green background */}
-              <div className="bg-[#027d02] text-[40px] font-semibold px-6 py-1 mr-4 rounded-tl-lg">
-                {machine.id}
+              <div className="bg-[#027d02] text-[35px] font-bold px-4 py-0 mr-4 rounded-tl-2xl">
+                {String(machine.id).padStart(2, '0')}
               </div>
 
 
               {/* Name with blue background */}
-              <div className="flex-1 text-center text-[40px] font-semibold bg-[#003263] rounded-md">
+              <div className="flex-1 text-center text-[27px] font-bold bg-[#003263] rounded-2xl">
                 {machine.name}
               </div>
             </div>
 
-            <div className="w-full p-2 bg-[#0101dd] text-white">
-              <div className="grid grid-cols-2 text-center gap-y-10">
+            <div className="w-full px-0 py-4 bg-[#0101dd] text-white">
+              <div className="grid grid-cols-2 text-center gap-y-9">
                 {/* Daily Target */}
                 <div className="flex flex-col justify-center items-center">
-                  <div className="font-bold text-[13px]">MỤC TIÊU NGÀY</div>
-                  <div className="text-xs">(DAILY TARGET)</div>
+                  <div className="font-bold text-[14px]">MỤC TIÊU NGÀY</div>
+                  <div className="text-[14px]">(DAILY TARGET)</div>
                 </div>
                 <div className="flex flex-col justify-center items-center">
-                  <div className="text-[38px] font-bold">{machine.dailyTarget}</div>
+                  <div className="text-[40px] font-bold">{machine.dailyTarget}</div>
                 </div>
 
                 {/* Hourly Target */}
                 <div className="flex flex-col justify-center items-center">
-                  <div className="font-bold text-[13px]">MỤC TIÊU GIỜ</div>
-                  <div className="text-xs">(HOURLY TARGET)</div>
+                  <div className="font-bold text-[14px]">MỤC TIÊU GIỜ</div>
+                  <div className="text-[14px]">(HOURLY TARGET)</div>
                 </div>
                 <div className="flex flex-col justify-center items-center">
-                  <div className="text-[38px] font-bold">{machine.hourTarget}</div>
+                  <div className="text-[40px] font-bold">{machine.hourTarget}</div>
                 </div>
 
                 {/* Actual */}
                 <div className="flex flex-col justify-center items-center">
-                  <div className="font-bold text-[13px]">THỰC HIỆN</div>
-                  <div className="text-xs">(ACTUAL)</div>
+                  <div className="font-bold text-[14px]">THỰC HIỆN</div>
+                  <div className="text-[14px]">(ACTUAL)</div>
                 </div>
                 <div className="flex flex-col justify-center items-center">
-                  <div className="text-[38px] font-bold">{machine.actual}</div>
+                  <div className="text-[40px] font-bold">{machine.actual}</div>
                 </div>
               </div>
             </div>
@@ -164,14 +164,14 @@ const HomePage = () => {
 
 
             {/* Status Indicators */}
-            <div className="w-full bg-[#033c8b] pt-3 pl-3 pr-3 rounded-b-lg ">
-              <div className="flex justify-between mb-2">
+            <div className="w-full bg-[#033c8b] pt-2 pl-2 pr-2 rounded-b-2xl ">
+              <div className="flex justify-between mb-1">
                 <div className="text-[18px] font-bold text-red-500">Hỏng Máy</div>
-                <div className="flex space-x-2">
+                <div className="flex space-x-1">
                   {Object.keys(machine.error).map((key) => (
                     <div
                       key={key}
-                      className={`w-6 h-6 flex items-center justify-center rounded-lg font-semibold ${machine.error[parseInt(key)] ? 'bg-red-500' : 'bg-gray-500'
+                      className={`w-8 h-8 flex items-center justify-center rounded-lg font-semibold ${machine.error[parseInt(key)] ? 'bg-red-500' : 'bg-gray-500'
                         }`}
                     >
                       {key}
@@ -180,13 +180,13 @@ const HomePage = () => {
                 </div>
               </div>
 
-              <div className="flex justify-between mb-2">
+              <div className="flex justify-between mb-1">
                 <div className="text-[18px] font-bold text-yellow-500">Cần Hỗ Trợ</div>
-                <div className="flex space-x-2">
+                <div className="flex space-x-1">
                   {Object.keys(machine.support).map((key) => (
                     <div
                       key={key}
-                      className={`w-6 h-6 flex items-center justify-center rounded-lg font-semibold ${machine.support[parseInt(key)] ? 'bg-yellow-500' : 'bg-gray-500'
+                      className={`w-8 h-8 flex items-center justify-center rounded-lg font-semibold ${machine.support[parseInt(key)] ? 'bg-yellow-500' : 'bg-gray-500'
                         }`}
                     >
                       {key}
@@ -197,11 +197,11 @@ const HomePage = () => {
 
               <div className="flex justify-between mb-2">
                 <div className="text-[18px] font-bold text-green-500">Hết Hàng</div>
-                <div className="flex space-x-2">
+                <div className="flex space-x-1">
                   {Object.keys(machine.outStock).map((key) => (
                     <div
                       key={key}
-                      className={`w-6 h-6 flex items-center justify-center rounded-lg font-semibold ${machine.outStock[parseInt(key)] ? 'bg-green-500' : 'bg-gray-500'
+                      className={`w-8 h-8 flex items-center justify-center rounded-lg font-semibold ${machine.outStock[parseInt(key)] ? 'bg-green-500' : 'bg-gray-500'
                         }`}
                     >
                       {key}
